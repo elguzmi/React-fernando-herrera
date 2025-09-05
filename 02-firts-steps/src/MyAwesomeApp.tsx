@@ -1,3 +1,5 @@
+import type{ CSSProperties } from "react";
+
 export function MyAwesomeApp() {
     const firtsName = "Santiago" , lastName = 'Guzman'
 
@@ -7,6 +9,12 @@ export function MyAwesomeApp() {
     const address = {
         zipCode : '123',
         country : 'Colombia'
+    }
+
+    const styles:CSSProperties = {
+        backgroundColor: isActive ? '#fafa' : '#ccc',
+        borderRadius: 10,
+        padding: 10
     }
     return (
         <>
@@ -19,7 +27,9 @@ export function MyAwesomeApp() {
             <p>{ 2 + 2}</p>
 
             <h1>{ isActive && 'Activo' }</h1>
-            { JSON.stringify(address)  }
+            <p style={styles}>
+                { JSON.stringify(address)  }
+            </p>
         </>
     )
 }
