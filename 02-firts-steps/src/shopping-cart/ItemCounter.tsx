@@ -1,5 +1,6 @@
 import {  MouseEvent, useState } from "react"
-import './ItemCounter.css'
+//import './ItemCounter.css'
+import styles from './ItemCounter.module.css'
 
 interface Props {
   name: string
@@ -9,6 +10,7 @@ interface Props {
 export function ItemCounter({name, quantity = 0} : Props) {
 
   const [ count , setCount ] = useState(quantity)
+
   
   const handleAdd = () => {
     setCount(count + 1)
@@ -23,10 +25,10 @@ export function ItemCounter({name, quantity = 0} : Props) {
     console.log('click', name , evento.target)
   }
   return (
-    <section className="item-row"
+    <section className={ styles['item-row']}
     // style={{ display:'flex', alignItems:'center' , gap:10, marginTop:10 }}
     >
-      <span style={{ fontSize:20 , width:150 }}>{ name }</span>
+      <span className={ styles['item-text'] + ' ' + (count === 1 ? styles['color-red'] : '') } >{ name }</span>
       <button
         onClick={handleAdd}
       >+1</button>
