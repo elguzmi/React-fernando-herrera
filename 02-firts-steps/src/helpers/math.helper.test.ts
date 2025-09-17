@@ -51,11 +51,43 @@ describe('substract',()=>{
     })
 })
 
+
 describe('multiply',()=>{
-    test('should multiply two positive number',()=>{
-        const a = 2;
-        const b = 3;
-        const result = multiply(a,b);
-        expect(result).toBe( a * b );
+
+    test('should multiply two positive numbers',()=>{
+        // ! 1. Arrange
+        const number1 = 7;
+        const number2 = 9;
+
+        // ! 2. Act
+        const result = multiply(number1,number2);
+
+        // ! 3. Assert
+        expect(result).toBe( number1 * number2 );
     })
+
+    test('Should result be 0 when multiply by 0',()=>{
+        // ! 1. Arrange
+        const number1 = 0;
+        const number2 = 4;
+
+        // ! 2. Act
+        const result = multiply(number1, number2);
+
+        // ! 3. Assert
+        expect(result).toBe( 0 );
+    })
+
+    test('Should result be negative when multiply two negative numbers',()=>{
+        // ! 1. Arrange
+        const number1 = -10;
+        const number2 = 5;
+
+        // ! 2. Act
+        const result = multiply(number1, number2);
+
+        // ! 3. Assert
+        expect(result).toBeLessThan( 0 );
+    })
+    
 })
