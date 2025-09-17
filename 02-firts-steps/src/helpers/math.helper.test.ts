@@ -1,5 +1,5 @@
 import {describe, expect, test} from 'vitest'
-import { add } from './math.helper'
+import { add , substract , multiply} from './math.helper'
 
 //Es una agrupacion de tests
 describe('add', ()=>{
@@ -27,4 +27,35 @@ describe('add', ()=>{
         expect(result).toBe(-4);
     })
 
+})
+
+describe('substract',()=>{
+    test('should substract two positive number',()=>{
+        const a = 1;
+        const b = 3;
+
+        const result = substract(a,b);
+        console.log({result})
+
+        expect(result).toBe( a - b );
+    })
+
+    test('should substract two negative number',()=>{
+        const a = -2;
+        const b = -4;
+
+        const result = substract(a,b);
+        console.log({result})
+
+        expect(result).toBe( a - b );
+    })
+})
+
+describe('multiply',()=>{
+    test('should multiply two positive number',()=>{
+        const a = 2;
+        const b = 3;
+        const result = multiply(a,b);
+        expect(result).toBe( a * b );
+    })
 })
