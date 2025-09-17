@@ -17,19 +17,20 @@ export function MyAwesomeApp() {
         padding: 10
     }
     return (
-        <>
-            <h1> { firtsName } </h1>
-            <h3>{ lastName }</h3>
+        <div data-testid="div-app">
+            <h1 data-testid="firts-name-title"> { firtsName } </h1>
+            <h3 data-testid="last-name-title">{ lastName }</h3>
 
-            <p>
+            <p className="favorite-games">
                 { favoriteGames.join(', ') }
             </p>
+
+            <h1 className="active">{ isActive && 'Activo' }</h1>
             <p>{ 2 + 2}</p>
 
-            <h1>{ isActive && 'Activo' }</h1>
             <p style={styles}>
                 { JSON.stringify(address)  }
             </p>
-        </>
+        </div>
     )
 }
