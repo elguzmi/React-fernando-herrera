@@ -1,0 +1,18 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FirstSteepsApp > should match snapchot 1`] = `
+<div>
+  <h1>
+    Carro de comprar
+  </h1>
+  <div
+    data-testid="item-counter"
+  />
+  <div
+    data-testid="item-counter"
+  />
+  <div
+    data-testid="item-counter"
+  />
+</div>
+`;
