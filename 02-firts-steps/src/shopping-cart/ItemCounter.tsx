@@ -1,4 +1,6 @@
-import {  MouseEvent, useState } from "react"
+import {  
+  //MouseEvent,
+   useState } from "react"
 //import './ItemCounter.css'
 import styles from './ItemCounter.module.css'
 
@@ -11,8 +13,9 @@ export function ItemCounter({name, quantity = 0} : Props) {
 
   const [ count , setCount ] = useState(quantity)
 
-  
+
   const handleAdd = () => {
+    console.log('add', count);
     setCount(count + 1)
   }
 
@@ -21,9 +24,9 @@ export function ItemCounter({name, quantity = 0} : Props) {
     setCount(count - 1)
   }
 
-  const handleClick = (evento : MouseEvent<HTMLButtonElement>)=>{
-    console.log('click', name , evento.target)
-  }
+  // const handleClick = (evento : MouseEvent<HTMLButtonElement>)=>{
+  //   console.log('click', name , evento.target)
+  // }
   return (
     <section className={ styles['item-row']}
     // style={{ display:'flex', alignItems:'center' , gap:10, marginTop:10 }}
@@ -33,7 +36,7 @@ export function ItemCounter({name, quantity = 0} : Props) {
         onClick={handleAdd}
       >+1</button>
       <span>{ count }</span>
-      <button 
+      <button
         onClick={handleSubtract}
       >-1</button>
     </section>
