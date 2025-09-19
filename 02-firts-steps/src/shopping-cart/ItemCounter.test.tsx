@@ -26,6 +26,6 @@ describe('ItemCounter',()=>{
         const quantity = 10;
         render(<ItemCounter name={name} quantity={quantity} />)
 
-        expect(screen.getByText(quantity)).toBeDefined()
+        expect(screen.getByText(quantity)).toBeDefined()  
     })
 })
