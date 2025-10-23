@@ -9,13 +9,18 @@ import { SearchInput } from "./shared/components/SearchInput"
 
 export const GifsApp = () => {
 
-    const [previousSearches, setPreviousSearches] = useState<string[]>(['saitama', 'goku', 'elder ring', 'one piece']) 
+    const [ previousSearches, setPreviousSearches ] = useState<string[]>([]) 
+
     const handledSearchClick = (term:string)=>{
         console.log(term);
     } 
 
     const handleSearch = ( query:string )=>{
-        console.log(query)
+        // Validar que el query no esté vacío
+        const searchWord = query.trim().toLowerCase()
+        if(searchWord.trim().length === 0 )return
+        if(previousSearches.includes(searchWord))return
+        setPreviousSearches( [ searchWord , ...previousSearches.filter((p,index)=>index<=6)])
     }
 
  return (
