@@ -1,15 +1,15 @@
 import { useState } from "react"
 import { GifsContainer } from "./gifs/components/GifsContainer"
 import { PreviousList } from "./gifs/components/PreviousList"
-import { mockGifs } from "./mock-data/gifs.mock"
 import { CustomHeader } from "./shared/components/CustomHeader"
 import { SearchInput } from "./shared/components/SearchInput"
 import { getGifsByQueryAction } from "./gifs/actions/get-gifs-by-query.action"
+import type { Gif } from "./gifs/interfaces/gif.interface"
 
 
 
 export const GifsApp = () => {
-
+    const [ gifs , setGifs ] = useState<Gif[]>([])
     const [ previousSearches, setPreviousSearches ] = useState<string[]>([]) 
 
     const handledSearchClick = (term:string)=>{
@@ -23,10 +23,12 @@ export const GifsApp = () => {
         if(previousSearches.includes(searchWord))return
 
         // previousSearches.unshift(searchWord)   // inserta el elemento al inicio del array
-        setPreviousSearches( [ searchWord , ...previousSearches.filter((p,index)=>index<=6)])
+        setPreviousSearches( [ searchWord , ...previousSearches.filter((item,index)=>index<=6)])
         //setPreviousSearches( [ searchWord , ...previousSearches].splice(0,8))
 
-        await getGifsByQueryAction(searchWord)
+        const gifs = await getGifsByQueryAction(searchWord)
+        setGifs(gifs)
+        
     }
 
  return (
@@ -44,7 +46,7 @@ export const GifsApp = () => {
 
 
         {/* gifs container */}
-        <GifsContainer gifs={mockGifs} />
+        <GifsContainer gifs={gifs} />
     </>
   )
 }
