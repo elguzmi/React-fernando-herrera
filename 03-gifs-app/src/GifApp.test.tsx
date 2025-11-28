@@ -5,6 +5,6 @@ import { GifsApp } from './GifsApp'
 describe('GifApp', ()=>{
   test('should render component properly', ()=>{
     const {container} = render(<GifsApp />)
-    expect(container).toMatchSnapshot();
+    expect(container).toMatchSnapshot();  // create snapshot folder
   })
 })
