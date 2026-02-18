@@ -21,5 +21,7 @@ describe("CustomHeader", ()=>{
     test('should not render description when not provided',async ()=>{
         const { container} =  render(<CustomHeader  title={title}  />)
         expect(container.getElementsByTagName('p').length).toBe(0)
+        // el screen tiene la ventaja que cuando son renderizados y cambian el screen se mantiene actualizado
+        // el container si mantiene su original
     })
 })
