@@ -9,6 +9,7 @@ export const getGifsByQueryAction = async (query: string): Promise<Gif[]> => {
       limit :10
     }
   })
+  console.log(response)
   // retorna un array de gifs con la estructura de la interfaz Gif
   return response.data.data.map(gif=>({
     id:gif.id,

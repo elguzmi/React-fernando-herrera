@@ -14,7 +14,6 @@ export const useGifs = ()=>{
 
 
     const handledSearchClick = async (term:string)=>{
-        console.log(gifCache.current)
         if(gifCache.current[term]){
             setGifs(gifCache.current[term])
             return
