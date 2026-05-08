@@ -21,6 +21,7 @@ export const useGifs = ()=>{
         
         const gifs = await getGifsByQueryAction(term)
         setGifs(gifs)
+        gifCache.current[term] = gifs; // cache the gifs
     } 
 
     const handleSearch = async ( query:string )=>{

@@ -1,4 +1,4 @@
-export const gifsMock = {
+export const giphySearchResponseMock = {
   "data": [
       {
           "type": "gif",
