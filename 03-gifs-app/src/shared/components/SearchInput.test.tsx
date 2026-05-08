@@ -35,7 +35,6 @@ describe('SearchInput', ()=>{
       fireEvent.change(input, {target: {value: 'w'}})
       fireEvent.change(input, {target: {value: 'sx'}})
 
-
       await waitFor(()=>{
         expect(onSearch).toHaveBeenCalledTimes(1)
         expect(onSearch).toHaveBeenCalledWith('sx')
